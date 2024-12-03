@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/ClantumLogoLight.svg" type="image/x-icon">
+    <title>GalaxyOS</title>
+    <style>
+      @font-face {
+        font-family: JB;
+        src: url('fonts/JB.otf') format('opentype');
+      }
+        body {
+  font-family: 'JB', sans-serif;
+  background-color: #11003c;
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+header {
+  color: #2e00d6;
+  padding: 20px;
+}
+
+h1 {
+  font-weight: 600;
+  margin: 0;
+  text-align: left;
+}
+
+nav {
+  text-align: right;
+}
+
+nav a {
+  padding: 10px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-align: right;
+}
+
+nav a:hover {
+  text-align: right;
+  color: #04ff00;
+}
+
+.content {
+  padding: 40px 20px;
+}
+
+.content img {
+  max-width: 80%;
+  min-width: 70%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+.download-btn {
+  display: inline-block;
+  background-color: #17007d;
+  color: #ffffff;
+  padding: 15px 30px;
+  margin-top: 20px;
+  border-radius: 5px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.download-btn:hover {
+  background-color: #433082;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+.features {
+  background-color: #101010;
+  border: 1px solid #00000000;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  text-align: left;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.features h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+  font-size: 1.5em;
+}
+
+.features ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+  background-color: #303030;
+  border: 1px solid #1f1f1f;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.features li:hover {
+  background-color: #7a7a7a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.features img {
+  width: auto;
+  height: 40px;
+  margin-right: 20px;
+  border-radius: 0px;
+}
+
+footer {
+  background-color: #11003c;
+  color: #ccc;
+  padding: 10px 0;
+  margin-top: 30px;
+  border-top: 2px solid #434343;
+  font-size: 0.9em;
+}
+    </style>
+</head>
+<body>
+
+    <header>
+	        <nav>
+            <h1>GalaxyOS</h1>
+        </nav>
+    </header>
+
+    <div class="content main">
+        <h2>A simple and functional WebOS.</h2>
+        <p>GalaxyOS (formerly QuantumOS) is a functional WebOS powered by the PlutoOS core.</p>
+        <img src="assets/PreviewGalaxyOS.png" alt="GalaxyOS">
+        <p>This OS is made to replicate a desktop experience on the web that normal users would get as an actual os. Go try it out now!</p>
+        <a onclick="window.open('https://galaxyos.thats-the.name')" class="download-btn">Try GalaxyOS</a>
+    </div>
+
+    <footer>
+        &copy; 2024 Clantum Studios. All rights reserved.
+    </footer>
+
+</body>
+</html>
+ 

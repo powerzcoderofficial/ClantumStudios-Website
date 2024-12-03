@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/ClantumLogoLight.svg" type="image/x-icon">
+    <title>Products - Clantum Studios</title>
+    <link rel="stylesheet" href="styles_products.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/ClantumLogoLight.svg" alt="Clantum Logo">
+            </div>
+            <script>
+                function showSidebar() {
+                  const HamburgerMenu = document.querySelector('.sidebar');
+                  HamburgerMenu.style.display = 'flex';
+                }
+                function hideSidebar() {
+                  const HamburgerMenu = document.querySelector('.sidebar');
+                  HamburgerMenu.style.display = 'none';
+                }
+                </script>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html" class="active">Products</a></li>
+                    <li><a href="team.html">Owners</a></li>
+                    <li><a href="news.html">News</a></li>
+                  </ul>
+                  <ul class="normalbar">
+                    <li class="hideonmobile"><a href="index.html">Home</a></li>
+                    <li class="hideonmobile"><a href="products.html" class="active">Products</a></li>
+                    <li class="hideonmobile"><a href="team.html">Owners</a></li>
+                    <li class="hideonmobile"><a href="news.html">News</a></li>
+                    <li class="menuButton" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                  </ul>
+        </nav>
+    </header>
+
+    <!-- Products Section -->
+    <main class="products-page main">
+        <h1>Products</h1>
+        <p>All our products ever made are listed here:</p>
+        <div class="products-container">
+            <!-- Product Card 1 -->
+            <a href="Product2.html" class="product-card">
+                <img src="assets/galaxyos.png" alt="Galaxy Alpha">
+                <div class="product-content">
+                    <h3>GalaxyOS</h3>
+                    <p>A functional WebOS powered by the Pluto core.</p>
+                </div>
+            </a>
+            <!-- Product Card 2 -->
+            <a href="Product1.html" class="product-card">
+                <img src="assets/cloudos.png" alt="Cloud V1.0">
+                <div class="product-content">
+                    <h3>CloudOS</h3>
+                    <p>A functional Web Terminal made with the webcore as its foundation.</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Clantum Studios. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

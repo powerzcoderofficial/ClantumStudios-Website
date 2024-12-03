@@ -1,0 +1,196 @@
+/* Import JB font */
+@font-face {
+  font-family: 'JB';
+  src: url('./fonts/JB.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: 'JB', sans-serif;
+  background-color: #11003a;
+  color: #fff;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  /* Vertically center the logo and nav links */
+  justify-content: space-between;
+  padding: 5px 20px;
+  /* Reduce padding to make the navbar slimmer */
+  background-color: #11003a;
+  height: 80px;
+  /* Fix the navbar height */
+  box-sizing: border-box;
+  border-bottom: 1px solid #444;
+}
+
+header .logo img {
+  height: 40px;
+  /* Adjust the height of the logo */
+  width: auto;
+  /* Keep the aspect ratio of the logo */
+}
+
+.menuButton {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .menuButton {
+    display: block;
+  }
+  .hideonmobile {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .sidebar {
+    width: 100%;
+  }
+}
+
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 250px;
+  z-index: 999;
+  background-color: #1b00605d;
+  list-style: none;
+  display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  backdrop-filter: blur(10px);
+}
+
+.sidebar li {
+  width: 100%;
+}
+
+.sidebar a {
+  width: 100%;
+}
+
+.normalbar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  margin: 0;
+  list-style: none;
+  background-color: #11003a;
+  border-bottom: 1px solid #444;
+  /* Add a border under the header */
+}
+
+.normalbar li {
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  line-height: 60px;
+  /* Vertically align links with the navbar */
+}
+
+header nav ul li a.active {
+  font-weight: bold;
+  font-family: JB;
+  border-bottom: 2px solid #fff;
+}
+
+.container {
+  text-align: center;
+  padding: 40px;
+}
+
+h1 {
+  font-size: 36pt;
+  margin: 0;
+}
+
+#About_us {
+  font-size: 17pt;
+}
+
+#AboutP {
+  font-size: 11pt;
+}
+
+#Resources {
+  font-size: 17pt;
+}
+
+#ResourcesP {
+  font-size: 11pt;
+}
+
+#ResourcesL {
+  font-size: 12pt;
+}
+
+.subtitle {
+  font-size: 12pt;
+  margin: 10px 0 30px;
+  color: #ccc;
+}
+
+.about,
+.resources {
+  margin: 20px 0;
+  text-align: left;
+  max-width: 35em;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.about h2,
+.resources h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.about p,
+.resources p,
+.resources ul {
+  font-size: 1em;
+  color: #ccc;
+}
+
+.resources ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resources ul li {
+  margin: 5px 0;
+}
+
+.resources ul li a {
+  color: #5b36ff;
+  text-decoration: none;
+}
+
+
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #11003a;
+  color: #ccc;
+  font-size: 0.9em;
+  border-top: 1px solid #444;
+}

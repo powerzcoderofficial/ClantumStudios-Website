@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/ClantumLogoLight.svg" type="image/x-icon">
+    <title>News - Clantum Studios</title>
+    <link rel="stylesheet" href="styles_news.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/ClantumLogoLight.svg" alt="Clantum Logo">
+            </div>
+            <script>
+                function showSidebar() {
+                    const HamburgerMenu = document.querySelector('.sidebar');
+                    HamburgerMenu.style.display = 'flex';
+                }
+                function hideSidebar() {
+                    const HamburgerMenu = document.querySelector('.sidebar');
+                    HamburgerMenu.style.display = 'none';
+                }
+            </script>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path
+                                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                        </svg></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="team.html">Owners</a></li>
+                <li><a href="news.html" class="active">News</a></li>
+            </ul>
+            <ul class="normalbar">
+                <li class="hideonmobile"><a href="index.html">Home</a></li>
+                <li class="hideonmobile"><a href="products.html">Products</a></li>
+                <li class="hideonmobile"><a href="team.html">Owners</a></li>
+                <li class="hideonmobile"><a href="news.html" class="active">News</a></li>
+                <li class="menuButton" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px"
+                            viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                            <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                        </svg></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- News Section -->
+    <main class="news-page main">
+        <h1>News</h1>
+        <p>Things happening in Clantum are listed here:</p>
+        <div class="news-container">
+            <!--<a href="" class="news-card">
+                <img id="banner" src="" alt="News 2">
+                <div class="news-content">
+                    <h3 id="news-title"></h3>
+                    <p id="news-description"><br>
+                        <b>Read More...</b>
+                    </p>
+                </div>
+            </a>-->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Clantum Studios. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Fetch the query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const newsId = parseInt(urlParams.get('id'), 10); // Get the ID as an integer
+    
+        // Fetch JSON and populate data
+        fetch('./assets/newscard_data.json') // Adjust the path to your JSON file
+            .then(response => response.json())
+            .then(data => {
+                const container = document.querySelector('.news-container');
+                const reversedData = data.reverse(); // Reverse the order of the data array
+    
+                if (!isNaN(newsId) && newsId > 0 && newsId <= reversedData.length) {
+                    // Display only one item matching the ID
+                    const newsItem = reversedData[newsId - 1];
+    
+                    const card = document.createElement('a');
+                    card.className = 'news-card';
+                    card.href = `newsdetails.html?id=${newsId}`; // Link to the details page
+    
+                    card.innerHTML = `
+                        <img src="${newsItem.banner}" alt="${newsItem.title}">
+                        <div class="news-content">
+                            <h3>${newsItem.title}</h3>
+                            <p>${newsItem.content} <br><b>Read More...</b></p>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                } else {
+                    // Display all items in reversed order
+                    reversedData.forEach((newsItem, index) => {
+                        const card = document.createElement('a');
+                        card.className = 'news-card';
+                        card.href = `newsdetails.html?id=${reversedData.length - index}`; // Adjust ID for reversed order
+    
+                        card.innerHTML = `
+                            <img src="${newsItem.banner}" alt="${newsItem.title}">
+                            <div class="news-content">
+                                <h3>${newsItem.title}</h3>
+                                <p>${newsItem.content} <br><b>Read More...</b></p>
+                            </div>
+                        `;
+                        container.appendChild(card);
+                    });
+                }
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+    
+
+</body>
+
+</html>

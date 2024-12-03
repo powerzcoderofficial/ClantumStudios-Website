@@ -1,0 +1,42 @@
+[
+    {
+        "banner": "assets/News1(WelcomeToClantum).png",
+        "title": "Clantum: A Warm Welcome",
+        "content": "Welcome to Clantum: Where Innovation Transforms Possibilities. At"
+    },
+    {
+        "banner": "assets/News2(DevelopmentPaused).png",
+        "title": "Development Paused",
+        "content": "Hello. Development at Clantum has temporarily been paused due to exams ahead of the"
+    },
+    {
+        "banner": "assets/News3(CloudRestarted).png",
+        "title": "CloudOS: Project Restarted",
+        "content": "I'm going to code Cloud from the start, here is why: A more"
+    },
+    {
+        "banner": "assets/News4(QuantumRestarted).png",
+        "title": "QuantumOS: Project Restarted",
+        "content": "The quantumOS project has been restarted. This has happened because of the need for: "
+    },
+    {
+        "banner": "assets/News5(CloudCompleted).png",
+        "title": "CloudOS: Project Completed",
+        "content": "Dear members, I would proudly like to announce that CloudOS has now officially become a"
+    },
+    {
+        "banner": "assets/News6(QuantumCompleted).png",
+        "title": "QuantumOS: Project Completed",
+        "content": "Dear members, I would proudly like to announce that QuantumOS has now officially become a"
+    },
+    {
+        "banner": "assets/News7(Collab With LET).png",
+        "title": "Collaboration With LET™",
+        "content": "We have recently got a Collaboration offer from a startup named LET™ by"
+    },
+    {
+        "banner": "assets/News8(ClantumLogoChange).png",
+        "title": "Clantum™ logo change",
+        "content": "Recently, the designers and some people of our community were not really liking"
+    }
+]

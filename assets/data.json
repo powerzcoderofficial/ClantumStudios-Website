@@ -1,0 +1,42 @@
+[
+    {
+        "banner": "assets/News1(WelcomeToClantum).png",
+        "title": "Clantum: A Warm Welcome",
+        "content": "Welcome to Clantum: Where Innovation Transforms Possibilities. At Clantum, we are the architects of digital evolution, pioneering groundbreaking solutions that redefine the future of technology. As a premier software development company, our core essence lies in transcending the ordinary. We thrive on transforming concepts into reality, crafting sophisticated solutions that empower businesses and elevate user experiences. Founded with a vision to revolutionize the tech landscape, Clantum stands at the forefront of innovation. Our team comprises ingenious minds, each driven by an insatiable passion for coding, design, and problem-solving. We breathe life into ideas, harnessing the latest advancements to engineer solutions that surpass expectations. What sets us apart is our unwavering commitment to excellence. We understand that the digital realm is ever-evolving, and our agility and adaptability ensure that we remain at the vanguard of technological progress. At Clantum, we're not just in the business of writing code; we craft solutions that resonate. Our bespoke software applications, cutting-edge web development, and robust IT solutions are meticulously tailored to meet the unique needs of our clients. Not only web technology but other exciting tech as well! We stand poised to navigate the complex landscapes of technology, understanding that every challenge is an opportunity to innovate. Our mission is to simplify complexities, streamline processes, and drive success for our clients in an increasingly digital world. Thank you for considering Clantum. Join us as we embark on a transformative journey, where possibilities are not just imagined but brought to life."
+    },
+    {
+        "banner": "assets/News2(DevelopmentPaused).png",
+        "title": "Development Paused",
+        "content": "Hello. Development at Clantum has temporarily been paused due to exams ahead of the owners. Development will resume after a few weeks. We hope you enjoy this break at its fullest. Thank you."
+    },
+    {
+        "banner": "assets/News3(CloudRestarted).png",
+        "title": "CloudOS: Project Restarted",
+        "content": "I'm going to code Cloud from the start, here is why: a more stable OS image structure, there are only 2 slides, the first one is for uninstalled programs and unused processes, the second one is the base system with the boot menu and the shell and everything, a more advanced window dragging system, more themes and desktop environments, more login managers, a new file system. Thank you."
+    },
+    {
+        "banner": "assets/News4(QuantumRestarted).png",
+        "title": "QuantumOS: Project Restarted",
+        "content": "The quantumOS project has been restarted. This has happened because of the need for: a neat OS image, stable structure, easy-to-read coding in VBA, and a lot easier to understand slide structure. Thank you."
+    },
+    {
+        "banner": "assets/News5(CloudCompleted).png",
+        "title": "CloudOS: Project Completed",
+        "content": "Dear members, I would proudly like to announce that CloudOS has now officially become a web-based terminal! This change was carefully discussed between our server staff and co-owners, and after planning for so long, we decided that all our products (mostly) will now be web-based. Don’t worry, as we will still upload the old PPTOSes by completing them without all the features. At the moment, we are discussing what to do with QuantumOS. Thank you for all your support that helped us make this community and these creations."
+    },
+    {
+        "banner": "assets/News6(QuantumCompleted).png",
+        "title": "QuantumOS: Project Completed",
+        "content": "Dear members, I would proudly like to announce that QuantumOS has now officially become a web-based Operating System! This change was carefully discussed between our server staff and co-owners. Another change is that QuantumOS is now called GalaxyOS. After planning for so long, we decided that all our products (mostly) will now be web-based. Don’t worry, as we will still upload the old PPTOSes by completing them without all the features. At the moment, we are discussing what to do next. Thank you for all your support that helped us make this community and these creations."
+    },
+    {
+        "banner": "assets/News7(Collab With LET).png",
+        "title": "Collaboration With LET™",
+        "content": "We have recently got a Collaboration offer from a startup named LET™ by slivercancode on discord. There was a meeting held in the Clantum studios discord server where the Owners of Clantum and LET™ talked together about the offer. At the end, it was decided that clantum will now help the LET™ startup by sending them products and promoting the startup to other members. In return, LET will be sharing their revenue with the clantum team. The amounts that the Clantum team and the LET™ team would get will be discussed later."
+    },
+    {
+        "banner": "assets/News8(ClantumLogoChange).png",
+        "title": "Clantum™ logo change",
+        "content": "Recently, the designers and some people of our community were not really liking the current logo a lot, so, we decided to revamp it a little bit. The result of the Revamp is shown in the above picture. Please let us know your thoughts about that in our discord server."
+    }
+]

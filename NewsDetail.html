@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/ClantumLogoLight.svg" type="image/x-icon">
+    <title>News Details</title>
+    <link rel="stylesheet" href="styles_newsdetails.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/ClantumLogoLight.svg" alt="Clantum Logo">
+            </div>
+            <script>
+                function showSidebar() {
+                  const HamburgerMenu = document.querySelector('.sidebar');
+                  HamburgerMenu.style.display = 'flex';
+                }
+                function hideSidebar() {
+                  const HamburgerMenu = document.querySelector('.sidebar');
+                  HamburgerMenu.style.display = 'none';
+                }
+                </script>
+                <ul class="sidebar">
+                    <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="team.html">Owners</a></li>
+                    <li><a href="news.html" class="active">News</a></li>
+                  </ul>
+                  <ul class="normalbar">
+                    <li class="hideonmobile"><a href="index.html">Home</a></li>
+                    <li class="hideonmobile"><a href="products.html">Products</a></li>
+                    <li class="hideonmobile"><a href="team.html">Owners</a></li>
+                    <li class="hideonmobile"><a href="news.html" class="active">News</a></li>
+                    <li class="menuButton" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                  </ul>
+        </nav>
+    </header>
+
+    <!-- News Detail Section -->
+    <main class="news-detail main">
+        <!-- Close Button -->
+        <div class="close-btn">
+            <a href="news.html">×</a>
+        </div>
+
+        <!-- News Image -->
+        <div class="news-image">
+            <img id="banner" src="" alt="News Image">
+        </div>
+
+        <!-- News Content -->
+        <div class="news-description">
+            <h1 id="news-title"></h1>
+            <p id="news-description">
+            </p>
+        </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© Clantum Studios. All Rights Reserved.</p>
+    </footer>
+    <script>
+        // Fetch the query parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const newsId = urlParams.get('id'); // e.g., "id=1"
+
+        // Fetch JSON and populate data
+        fetch('./assets/data.json') // Adjust the path to your JSON file
+            .then(response => response.json())
+            .then(data => {
+                const newsItem = data[newsId - 1]; // Convert to zero-index for array
+                
+                if (newsItem) {
+                    document.getElementById('banner').src = newsItem.banner;
+                    document.getElementById('news-title').textContent = newsItem.title;
+                    document.getElementById('news-description').textContent = newsItem.content;
+                } else {
+                    document.querySelector('.news-description').innerHTML = '<p>News not found.</p>';
+                }
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+</body>
+
+</html>
