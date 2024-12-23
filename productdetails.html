@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/ClantumLogoLight.svg" type="image/x-icon">
-    <title>GalaxyOS</title>
+    <title></title>
     <style>
       @font-face {
         font-family: JB;
@@ -138,22 +138,52 @@ footer {
 
     <header>
 	        <nav>
-            <h1>GalaxyOS</h1>
+            <h1 class="title"></h1>
         </nav>
     </header>
 
     <div class="content main">
-        <h2>A simple and functional WebOS.</h2>
-        <p>GalaxyOS (formerly QuantumOS) is a functional WebOS powered by the PlutoOS core.</p>
-        <img src="assets/PreviewGalaxyOS.png" alt="GalaxyOS">
-        <p>This OS is made to replicate a desktop experience on the web that normal users would get as an actual os. Go try it out now!</p>
-        <a onclick="window.open('https://galaxyos.thats-the.name')" class="download-btn">Try GalaxyOS</a>
+        <h2></h2>
+        <p></p>
+        <img src=""> 
+        <p></p>
+        <a onclick="window.open('')" class="download-btn">Try it out</a> 
     </div>
 
     <footer>
         &copy; 2024 Clantum Studios. All rights reserved.
     </footer>
-
+    <script>
+      
+      const urlParams = new URLSearchParams(window.location.search);
+      const productId = parseInt(urlParams.get('id'), 10); 
+  
+      
+      fetch('./assets/product_data.json') 
+          .then(response => response.json())
+          .then(data => {
+              
+              if (!isNaN(productId) && productId > 0 && productId <= data.length) {
+                  const product = data[productId - 1]; 
+                  
+                  
+                  document.querySelector('h1.title').textContent = product.title;
+                  document.querySelector('.content h2').textContent = product.heading;
+                  document.querySelector('.content p:nth-of-type(1)').textContent = product.content;
+                  document.querySelector('.content img').src = product.banner;
+                  document.querySelector('.content img').alt = product.title;
+                  document.querySelector('.content p:nth-of-type(2)').textContent = product.content2;
+                  document.querySelector('.download-btn').onclick = () => {
+                      window.open(product.link, '_blank');
+                  };
+              } else {
+                  
+                  document.body.innerHTML = '<h1>Product not found</h1><p>Return to the <a href="products.html">Products page</a>.</p>';
+              }
+          })
+          .catch(error => console.error('Error loading JSON:', error));
+  </script>
+  
 </body>
 </html>
  

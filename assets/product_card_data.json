@@ -1,0 +1,14 @@
+[
+    {
+        "banner": "assets/galaxyos.png",
+        "title": "GalaxyOS",
+        "content": "A webOS powered by the pluto core",
+        "link": "./productdetails.html?id=2"
+    },
+    {
+        "banner": "assets/cloudos.png",
+        "title": "CloudOS",
+        "content": "A functional web terminal with the webcore as its foundation",
+        "link": "./productdetails.html?id=1"
+    }
+]

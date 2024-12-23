@@ -46,22 +46,8 @@
         <h1>Products</h1>
         <p>All our products ever made are listed here:</p>
         <div class="products-container">
-            <!-- Product Card 1 -->
-            <a href="Product2.html" class="product-card">
-                <img src="assets/galaxyos.png" alt="Galaxy Alpha">
-                <div class="product-content">
-                    <h3>GalaxyOS</h3>
-                    <p>A functional WebOS powered by the Pluto core.</p>
-                </div>
-            </a>
-            <!-- Product Card 2 -->
-            <a href="Product1.html" class="product-card">
-                <img src="assets/cloudos.png" alt="Cloud V1.0">
-                <div class="product-content">
-                    <h3>CloudOS</h3>
-                    <p>A functional Web Terminal made with the webcore as its foundation.</p>
-                </div>
-            </a>
+            <a href=""></a>
+            <a href=""></a>
         </div>
     </main>
 
@@ -69,5 +55,32 @@
     <footer>
         <p>© Clantum Studios. All Rights Reserved.</p>
     </footer>
+    <script>
+        // Fetch JSON and populate data
+        fetch('./assets/product_card_data.json') // Adjust the path to your JSON file
+            .then(response => response.json())
+            .then(data => {
+                const container = document.querySelector('.products-container');
+                const reversedData = data.reverse(); // Reverse the order of the data array
+    
+                // Dynamically create and append product cards in reversed order
+                reversedData.forEach(product => {
+                    const card = document.createElement('a');
+                    card.className = 'product-card';
+                    card.href = product.link; // Update with the appropriate link
+    
+                    card.innerHTML = `
+                        <img src="${product.banner}" alt="${product.title}">
+                        <div class="product-content">
+                            <h3>${product.title}</h3>
+                            <p>${product.content}</p>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => console.error('Error loading JSON:', error));
+    </script>
+    
 </body>
 </html>
