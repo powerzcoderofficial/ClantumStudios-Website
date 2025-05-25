@@ -4,82 +4,209 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="assets/ClantumLogoLight.svg" type="image/x-icon">
-    <title>Products - Clantum Studios</title>
-    <link rel="stylesheet" href="styles_products.css">
+    <title>Our Products - Clantum Studios</title>
+    <link rel="stylesheet" href="styles_products.css"> <!-- Link to main styles.css -->
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
+    <header class="sticky-header">
         <nav>
             <div class="logo">
-                <img src="assets/ClantumLogoLight.svg" alt="Clantum Logo">
+                <a href="index.html"><img src="assets/ClantumLogoLight.svg" alt="Clantum Logo"></a>
             </div>
-            <script>
-                function showSidebar() {
-                  const HamburgerMenu = document.querySelector('.sidebar');
-                  HamburgerMenu.style.display = 'flex';
-                }
-                function hideSidebar() {
-                  const HamburgerMenu = document.querySelector('.sidebar');
-                  HamburgerMenu.style.display = 'none';
-                }
-                </script>
-                <ul class="sidebar">
-                    <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html" class="active">Products</a></li>
-                    <li><a href="team.html">Owners</a></li>
-                    <li><a href="news.html">News</a></li>
-                  </ul>
-                  <ul class="normalbar">
-                    <li class="hideonmobile"><a href="index.html">Home</a></li>
-                    <li class="hideonmobile"><a href="products.html" class="active">Products</a></li>
-                    <li class="hideonmobile"><a href="team.html">Owners</a></li>
-                    <li class="hideonmobile"><a href="news.html">News</a></li>
-                    <li class="menuButton" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
-                  </ul>
+            <ul class="sidebar">
+                <li onclick="hideSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <li><a href="products.html" class="active">Products</a></li>
+                <li><a href="blog.html" >Blog</a></li> <!-- Active link -->
+            </ul>
+            <ul class="normalbar">
+                <li class="hideonmobile"><a href="index.html">Home</a></li>
+                <li class="hideonmobile"><a href="aboutus.html">About Us</a></li>
+                <li class="hideonmobile"><a href="products.html" class="active">Products</a></li>
+                <li class="hideonmobile"><a href="blog.html">Blog</a></li> <!-- Active link -->
+                <li class="menuButton" onclick="showSidebar()"><a><svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="currentColor"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Products Section -->
-    <main class="products-page main">
-        <h1>Products</h1>
-        <p>All our products ever made are listed here:</p>
-        <div class="products-container">
-            <a href=""></a>
-            <a href=""></a>
-        </div>
+    <main class="main">
+        <section class="page-hero-section reveal-on-scroll">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Our <span class="rgb-text-animated">Product Suite</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Explore the innovative and fully customizable solutions crafted by Clantum Studios. Each product is designed with adaptability and power at its core.
+                </p>
+            </div>
+            <div class="hero-background-glow"></div>
+        </section>
+
+        <section id="product-listing" class="content-section reveal-on-scroll">
+            <!-- <h2 class="section-title"><span>All Products</span></h2> -->
+            <!-- <p class="section-intro">Browse through our complete catalog of offerings.</p> -->
+            <div class="product-grid-container">
+                <!-- Product cards will be injected here by JavaScript -->
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
     <footer>
-        <p>© Clantum Studios. All Rights Reserved.</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="assets/ClantumLogoLight.svg" alt="Clantum Logo Footer">
+                <span>Clantum Studios</span>
+            </div>
+            <ul class="social-icons">
+                <li><a href="https://github.com/ClantumStudios" aria-label="GitHub Profile" target="_blank" title="GitHub">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+                </a></li>
+                <li><a href="https://discord.gg/5WEtHdkAkn" aria-label="Discord Server" target="_blank" title="Discord">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M20.222 0H3.778C1.691 0 0 1.734 0 3.87v16.26C0 22.266 1.691 24 3.778 24h12.667l1.067-1.057-1.333-1.613H3.778V3.87h16.444v10.867h2.111V3.87C22.333 1.734 20.709 0 20.222 0zM7.789 17.034s-.534.606-.979.978c-1.111.979-2.222.87-2.222.87s.212-.505.423-.87c.845-1.409 1.28-3.028 1.28-4.756 0-3.87-1.902-6.944-1.902-6.944s2.889-.096 5.111 1.948c0 0-1.28 3.658-1.28 6.733 0 1.212.211 2.424.639 3.433a4.04 4.04 0 0 0 .933.506zm9.333-5.878c-.211 1.626-.844 3.134-1.493 4.444-.422.979-.978 1.19-1.19 1.19s-.211-.505-.317-.87c-.53-.87-.844-1.843-.844-2.888 0-3.076 1.28-6.733 1.28-6.733s2.222-2.044 5.111-1.948c0 .001-1.902 3.076-1.902 6.945a6.174 6.174 0 0 1 .365 2.666z"/></svg>
+                </a></li>
+                <li><a href="mailto:clantumofficial@gmail.com" aria-label="Email Us" title="Email">
+                    <svg viewBox="0 0 24 24"><path fill="currentColor" d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+                </a></li>
+            </ul>
+            <p class="copyright">© <span id="currentYear"></span> Clantum Studios. All Rights Reserved.</p>
+        </div>
     </footer>
+
+    <a href="#" class="scroll-to-top" aria-label="Scroll to top">
+        <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-160v-487L216-423l-56-57 320-320 320 320-56 57-224-224v487h-80Z"/></svg>
+    </a>
+
     <script>
-        // Fetch JSON and populate data
-        fetch('./assets/product_card_data.json') // Adjust the path to your JSON file
-            .then(response => response.json())
-            .then(data => {
-                const container = document.querySelector('.products-container');
-                const reversedData = data.reverse(); // Reverse the order of the data array
-    
-                // Dynamically create and append product cards in reversed order
-                reversedData.forEach(product => {
-                    const card = document.createElement('a');
-                    card.className = 'product-card';
-                    card.href = product.link; // Update with the appropriate link
-    
-                    card.innerHTML = `
-                        <img src="${product.banner}" alt="${product.title}">
-                        <div class="product-content">
-                            <h3>${product.title}</h3>
-                            <p>${product.content}</p>
-                        </div>
-                    `;
-                    container.appendChild(card);
+        // --- Sidebar Toggle ---
+        function showSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.style.display = 'flex';
+                setTimeout(() => { sidebar.classList.add('sidebar-visible'); }, 10); 
+            }
+        }
+        function hideSidebar() {
+            const sidebar = document.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.classList.remove('sidebar-visible');
+                const handleTransitionEnd = () => {
+                    if (!sidebar.classList.contains('sidebar-visible')) { sidebar.style.display = 'none'; }
+                    sidebar.removeEventListener('transitionend', handleTransitionEnd);
+                };
+                sidebar.addEventListener('transitionend', handleTransitionEnd);
+            }
+        }
+
+        // --- Scroll-to-Top Button ---
+        const scrollToTopBtn = document.querySelector('.scroll-to-top');
+        if (scrollToTopBtn) {
+            window.addEventListener('scroll', () => {
+                scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 300);
+            });
+            scrollToTopBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        }
+
+        // --- Reveal on Scroll Animation ---
+        const revealElements = document.querySelectorAll('.reveal-on-scroll');
+        if (revealElements.length > 0) {
+            const revealObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) { entry.target.classList.add('revealed'); }
                 });
-            })
-            .catch(error => console.error('Error loading JSON:', error));
+            }, { threshold: 0.05 });
+            revealElements.forEach(el => { revealObserver.observe(el); });
+        }
+        
+        // --- Current Year for Footer ---
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) { currentYearElement.textContent = new Date().getFullYear(); }
+        
+        // --- Active Nav Link Highlighting ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.normalbar a, .sidebar a');
+            const currentPathname = window.location.pathname;
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                // Simple check for current page, not considering hash for this specific page
+                if (link.pathname === currentPathname) {
+                    link.classList.add('active');
+                }
+            });
+            // Override for index.html if no specific page is matched
+            if (currentPathname.endsWith('/') || currentPathname.endsWith('index.html')) {
+                 document.querySelectorAll('.normalbar a[href="index.html"], .sidebar a[href="index.html"]').forEach(homeLink => {
+                    if (!homeLink.hash) { homeLink.classList.add('active'); }
+                 });
+            }
+        });
+
+        // In products.html, inside the <script> tag:
+
+// --- Fetch JSON and populate Product Cards ---
+fetch('./assets/product_card_data.json') // Uses the card-specific JSON
+    .then(response => {
+        if (!response.ok) { throw new Error('Network response was not ok ' + response.statusText); }
+        return response.json();
+    })
+    .then(data => {
+        const container = document.querySelector('.product-grid-container');
+        if (!container) {
+            console.error('Error: .product-grid-container not found!');
+            return;
+        }
+        const reversedData = data.slice().reverse(); 
+    
+        reversedData.forEach(product => {
+            const cardLink = document.createElement('a');
+            cardLink.className = 'product-card-link reveal-on-scroll'; 
+            
+            // Link to detail page if available, otherwise link to product.link or '#'
+            if (product.link_to_detail_page) {
+                cardLink.href = `product-detail.html?id=${product.id}`;
+            } else {
+                cardLink.href = product.link || '#'; // Fallback to external link if no detail page
+                if (product.link && product.link !== "#") {
+                    cardLink.target = "_blank"; 
+                    cardLink.rel = "noopener noreferrer";
+                }
+            }
+
+
+            let bannerImageHtml = `<div class="product-card-banner-placeholder">No Image</div>`;
+            if (product.banner) { // Assuming product.banner is suitable for card
+                    bannerImageHtml = `<img src="${product.banner}" alt="${product.title} banner" class="product-card-banner-image">`;
+            } else {
+                bannerImageHtml = `<div class="product-card-banner-placeholder"></div>`; 
+            }
+            
+            let statusTagHtml = '';
+            if (product.status) {
+                statusTagHtml = `<span class="product-status-tag status-${product.status.toLowerCase().replace(/\s+/g, '-')}">${product.status}</span>`;
+            }
+
+            cardLink.innerHTML = `
+                <div class="product-card-content">
+                    ${bannerImageHtml} 
+                    <div class="product-card-text-content">
+                        <h3 class="gradient-text">${product.title}</h3>
+                        <p>${product.content}</p>
+                        ${statusTagHtml}
+                    </div>
+                </div>
+            `;
+            container.appendChild(cardLink);
+        });
+
+        // Re-run reveal observer (same as before)
+        // (Removed the placeholder div for missing banners)
+        if (newRevealElements.length > 0 && typeof IntersectionObserver !== 'undefined') { /* ... */ }
+    })
+    .catch(error => console.error('Error loading or parsing product_card_data.json:', error));
     </script>
     
 </body>

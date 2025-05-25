@@ -1,176 +1,518 @@
+:root {
+  /* NodeOrbis Inspired Palette (Refined) */
+  --background-primary: #0D1117;
+  --background-secondary: #161B22;
+  --background-tertiary: #010409;
+  --text-primary: #E6EDF3;
+  --text-secondary: #8B949E;
+  --text-on-accent: #FFFFFF;
+  --accent-primary: #58A6FF;
+  --accent-primary-hover: #79B8FF;
+  --accent-secondary: #3FB950; /* Greenish */
+  --accent-secondary-hover: #5BE068;
+  --accent-gradient-start: #58A6FF; /* Blue for gradient */
+  --accent-gradient-end: #A371F7;   /* Purple for gradient */
+  --accent-rgb-1: #FF5858; /* Red for RGB */
+  --accent-rgb-2: #58FF58; /* Green for RGB */
+  --accent-rgb-3: #58A6FF; /* Blue for RGB */
+  --accent-rgb-4: #F7E55C; /* Yellow for RGB */
+  --accent-rgb-5: #A371F7; /* Purple for RGB */
+  
+  --border-color: #30363D;
+  --border-color-light: #21262D;
+  --shadow-color: rgba(0, 0, 0, 0.5); /* Slightly darker shadow */
+  --glow-color-primary: rgba(88, 166, 255, 0.35);
+  --glow-color-secondary: rgba(63, 185, 80, 0.35);
+  --glow-color-gradient-end: rgba(163, 113, 247, 0.35); /* Glow for the end of the gradient */
+
+  --font-main: 'JB', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-heading: 'JB', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+
+  --border-radius-small: 6px;
+  --border-radius-medium: 10px;
+  --border-radius-large: 16px;
+
+  --transition-speed: 0.3s;
+  --transition-easing: cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
 @font-face {
     font-family: 'JB';
     src: url('./fonts/JB.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
-  }
-  
-  body {
-    margin: 0;
-    font-family: 'JB', sans-serif;
-    background-color: #11003a;
-    color: #fff;
-  }
-  .main {
-    display: flex;
-    justify-content: center;
-  }
-  header nav {
-    display: flex;
-    align-items: center; /* Vertically center the logo and nav links */
-    justify-content: space-between;
-    padding: 5px 20px; /* Reduce padding to make the navbar slimmer */
-    background-color: #11003a;
-    height: 80px; /* Fix the navbar height */
-    box-sizing: border-box;
-    border-bottom: 1px solid #444;
-  }
-  
-  header .logo img {
-    height: 40px; /* Adjust the height of the logo */
-    width: auto; /* Keep the aspect ratio of the logo */
-  }
-
-  .menuButton {
-    display: none;
-  }
-  
-  @media (max-width: 800px) {
-    .menuButton {
-      display: block;
-    }
-    .hideonmobile {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 400px) {
-    .sidebar {
-      width: 100%;
-    }
-  }
-  
-  .sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
-    width: 250px;
-    z-index: 999;
-    background-color: #1b00605d;
-    list-style: none;
-    display: none;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    backdrop-filter: blur(10px);
-  }
-  
-  .sidebar li {
-    width: 100%;
-  }
-  
-  .sidebar a {
-    width: 100%;
-  }
-  
-  .normalbar {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-    margin: 0;
-    list-style: none;
-    background-color: #11003a;
-    border-bottom: 1px solid #444;
-    /* Add a border under the header */
-  }
-  
-  .normalbar li {
-    margin-left: 20px;
-  }
-
-  header nav ul {
-    display: flex;
-    justify-content: flex-end;
-    padding: 10px 20px;
-    margin: 0;
-    list-style: none;
-    background-color: #11003a;
-    border-bottom: 1px solid #444; /* Add a border under the header */
-  }
-  
-  header nav ul li {
-    margin-left: 20px;
-  }
-  
-  header nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    line-height: 60px; /* Vertically align links with the navbar */
-  }
-
-header nav ul li a.active {
-    font-weight: bold;
-    font-family: JB;
-    border-bottom: 2px solid #fff;
 }
 
-/* News Detail Section */
+body {
+    margin: 0;
+    font-family: var(--font-main);
+    background-color: var(--background-primary);
+    color: var(--text-primary);
+    line-height: 1.7; /* Increased for better readability */
+    -webkit-font-smoothing: antialiased; /* Smoother fonts */
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px; /* More padding around main content */
+}
+
+/* --- New Header Styles --- */
+.sticky-header { /* Apply this class to your <header> element */
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--background-tertiary); /* Using tertiary for a bit more depth */
+  box-shadow: 0 3px 15px var(--shadow-color);
+  backdrop-filter: blur(10px); /* Frosted glass effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+}
+
+header nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1320px; /* Wider max-width for modern layouts */
+  margin: 0 auto;
+  padding: 0.9rem 2rem; /* Adjust padding as needed */
+  height: 75px; /* Defined height */
+}
+
+header .logo img {
+  height: 40px; /* Slightly larger logo */
+  width: auto;
+  transition: filter var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing);
+}
+
+header .logo img:hover {
+  filter: drop-shadow(0 0 10px var(--glow-color-primary));
+  transform: scale(1.08) rotate(-2deg); /* Playful hover effect */
+}
+
+.normalbar {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  margin: 0; /* Reset margin */
+  padding: 0; /* Reset padding */
+}
+
+.normalbar li {
+  margin-left: 1.75rem; /* Spacing between items */
+}
+
+.normalbar li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.5rem 0.3rem;
+  position: relative;
+  transition: color var(--transition-speed) var(--transition-easing), text-shadow var(--transition-speed) var(--transition-easing);
+}
+
+.normalbar li a:hover,
+.normalbar li a.active {
+  color: var(--text-primary) !important;
+  text-shadow: 0 0 12px var(--glow-color-primary) !important;
+}
+
+.normalbar li a.active::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px; /* Position under the text */
+  width: 100%;
+  height: 2px;
+  background-color: var(--accent-primary);
+  border-radius: 2px;
+  box-shadow: 0 0 8px var(--glow-color-primary);
+}
+
+.nav-cta-button { /* Example: Add this class to a special nav link */
+  background: linear-gradient(95deg, var(--accent-primary), var(--accent-gradient-end));
+  color: var(--text-on-accent) !important;
+  padding: 0.7rem 1.4rem !important;
+  border-radius: var(--border-radius-medium);
+  font-weight: bold !important;
+  text-shadow: none !important;
+  transition: transform var(--transition-speed) var(--transition-easing), box-shadow var(--transition-speed) var(--transition-easing), filter var(--transition-speed) var(--transition-easing);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4), 0 0 15px var(--glow-color-gradient-end);
+}
+
+.nav-cta-button:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 6px 25px rgba(0,0,0,0.5), 0 0 25px var(--glow-color-gradient-end);
+  filter: brightness(1.2);
+  text-shadow: none !important;
+}
+.nav-cta-button::after { display: none !important; } /* Remove active underline for CTA */
+
+
+/* --- Sidebar (Mobile Menu) --- */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 290px; /* Slightly wider */
+  z-index: 1001; /* Above header potentially, or ensure header is less */
+  background-color: rgba(5, 7, 10, 0.95); /* var(--background-tertiary) with alpha */
+  list-style: none;
+  display: none; /* Initially hidden, JS will control this via class or style */
+  flex-direction: column;
+  align-items: stretch; /* Make items take full width */
+  justify-content: flex-start;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding-top: 1.5rem;
+  border-left: 1px solid var(--border-color);
+  transform: translateX(100%);
+  transition: transform var(--transition-speed) var(--transition-easing);
+}
+
+.sidebar.sidebar-visible { /* Add this class with JS to show sidebar */
+  transform: translateX(0);
+  display: flex; /* Needs to be flex to show */
+}
+
+.sidebar li { width: 100%; }
+
+.sidebar li a {
+  display: block;
+  padding: 1rem 2rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.15rem; /* Larger font for touch targets */
+  border-bottom: 1px solid var(--border-color-light);
+  transition: background-color var(--transition-speed) var(--transition-easing), 
+              color var(--transition-speed) var(--transition-easing), 
+              padding-left var(--transition-speed) var(--transition-easing), 
+              text-shadow var(--transition-speed) var(--transition-easing);
+}
+
+.sidebar li:first-child a { /* Assuming this is the close button link */
+  border-bottom: none;
+  margin-bottom: 0.5rem;
+  text-align: right; /* Align close icon to the right */
+  padding-top: 0.5rem; /* Adjust padding for close button */
+  padding-bottom: 0.5rem;
+}
+.sidebar li:first-child a svg { /* Style for the close SVG */
+    fill: var(--text-secondary);
+    width: 28px;
+    height: 28px;
+}
+.sidebar li:first-child a:hover svg {
+    fill: var(--text-primary);
+}
+
+
+.sidebar li a:not(:first-child):hover, /* Exclude close button from this hover */
+.sidebar li a.active:not(:first-child) {
+  background-color: var(--accent-primary);
+  color: var(--text-on-accent) !important;
+  padding-left: 2.2rem; /* Indent on hover/active */
+  text-shadow: 0 0 8px rgba(255,255,255,0.3);
+}
+.sidebar li:last-child a {
+    border-bottom: none; /* Remove border from last item */
+}
+
+.sidebar .nav-cta-button {
+  margin: 1.5rem 2rem;
+  display: block;
+  text-align: center;
+}
+
+/* Hamburger Menu Button (you'll need to add a button with this class to your HTML) */
+.menuButton { /* This class was in your original HTML's nav, now also for desktop hiding */
+    display: none; /* Hidden by default, shown in media query */
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 28px; /* Larger hamburger icon */
+    cursor: pointer;
+    padding: 0.5rem;
+    z-index: 1002; /* Make sure it's clickable over other elements */
+}
+.menuButton svg {
+    fill: var(--text-primary);
+    width: 30px;
+    height: 30px;
+}
+
+
+/* --- Enhanced News Detail Section --- */
 .news-detail {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2rem;
+    padding: 2.5rem; /* Increased padding */
+    background-color: var(--background-secondary);
+    border-radius: var(--border-radius-large); /* More pronounced radius */
+    max-width: 880px; /* Slightly wider for more content */
+    width: calc(100% - 40px); /* Responsive width with padding */
+    margin: 2rem auto;
+    box-shadow: 0 8px 30px var(--shadow-color), 0 0 15px var(--background-tertiary); /* Enhanced shadow */
+    position: relative;
+    border: 1px solid var(--border-color-light); /* Subtle border */
 }
 
 .close-btn {
-    align-self: flex-start;
-    margin-bottom: 1rem;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 10; /* Ensure it's above image if overlapping */
 }
 
 .close-btn a {
-    font-size: 2rem;
-    color: red;
+    font-size: 2rem; /* Larger close icon */
+    font-weight: bold;
+    color: var(--text-secondary);
     text-decoration: none;
+    line-height: 1;
+    padding: 8px; /* Larger clickable area */
+    border-radius: 50%;
+    transition: color var(--transition-speed) var(--transition-easing), background-color var(--transition-speed) var(--transition-easing);
+}
+
+.close-btn a:hover {
+    color: var(--accent-rgb-1);
+    background-color: rgba(255, 88, 88, 0.1); /* Subtle background on hover */
+}
+
+.news-image {
+    width: 100%;
+    margin-bottom: 2.5rem; /* More space below image */
+    overflow: hidden; /* To contain image effects if any */
+    border-radius: var(--border-radius-medium); /* Rounded corners for image container */
 }
 
 .news-image img {
     max-width: 100%;
     height: auto;
-    margin-bottom: 1rem;
+    border-radius: var(--border-radius-medium); /* Match container */
+    display: block;
+    transition: transform var(--transition-speed) var(--transition-easing);
+    /* Removed hover effect for now to keep it clean, can be added back:
+    &:hover {
+        transform: scale(1.03);
+    }
+    */
 }
 
 .news-description {
-    max-width: 800px;
+    max-width: 100%;
     text-align: left;
 }
 
 .news-description h1 {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+    font-size: 2.8rem; /* Larger title */
+    font-weight: 700; /* Bolder title */
+    margin-bottom: 1.5rem; /* Consistent margin */
+    color: var(--text-primary);
+    line-height: 1.2; /* Tighter line height for large headings */
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3); /* Subtle text shadow for depth */
 }
 
-/* Scrollable Text */
+.news-description p {
+    font-size: 1.05rem; /* Slightly larger paragraph text */
+    line-height: 1.8; /* More generous line height for readability */
+    color: var(--text-secondary);
+    text-align: justify; /* Keep justified for article feel */
+    margin-bottom: 1.5rem; /* Spacing between paragraphs */
+}
+.news-description p::first-letter { /* Optional: Drop cap style */
+  /* float: left; */
+  /* font-size: 3em; */
+  /* line-height: 0.8; */
+  /* padding-right: 0.1em; */
+  /* color: var(--accent-primary); */
+}
+
+
+/* Scrollable Text (if used directly on a p tag, might need a wrapper div) */
 .scrollable-text {
-    max-height: 300px;
+    max-height: 450px;
     overflow-y: auto;
-    padding: 1rem;
-    background-color: #0c0039;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    padding: 1.5rem; /* More padding */
+    background-color: var(--background-tertiary);
+    border-radius: var(--border-radius-medium);
+    margin-top: 1.5rem;
+    border: 1px solid var(--border-color); /* Slightly stronger border */
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: var(--accent-primary) var(--background-secondary); /* For Firefox */
+}
+.scrollable-text::-webkit-scrollbar { /* For Chrome, Safari, Edge */
+    width: 8px;
+}
+.scrollable-text::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+    border-radius: var(--border-radius-small);
+}
+.scrollable-text::-webkit-scrollbar-thumb {
+    background-color: var(--accent-primary);
+    border-radius: var(--border-radius-small);
+    border: 2px solid var(--background-secondary);
+}
+.scrollable-text p {
+    margin: 0.75rem 0;
+    color: var(--text-secondary);
+    font-size: 1rem; /* Ensure consistent font size */
 }
 
-.scrollable-text p {
-    margin: 1rem 0;
-}
 
 footer {
     text-align: center;
-    padding: 10px 0;
-    background-color: #11003a;
-    color: #ccc;
+    padding: 25px 0;
+    background-color: var(--background-tertiary);
+    color: var(--text-secondary);
     font-size: 0.9em;
-    border-top: 1px solid #444;
-  }
-  
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+
+/* Responsive adjustments */
+.hideondesktop { display: none !important; } /* Utility class */
+
+@media (max-width: 992px) { /* Adjust breakpoint for nav changes */
+    .normalbar {
+        display: none; /* Hide desktop nav links earlier */
+    }
+    .menuButton { /* Show hamburger menu button */
+        display: block; /* Was 'flex' which might be better for centering icon */
+        /* For the menuButton from your HTML structure (the <li>) */
+    }
+    header nav ul.normalbar { display: none; } /* Hide the normalbar ul specifically */
+    li.menuButton { display: list-item !important; } /* If menuButton is an LI */
+    
+    .hideondesktop { display: flex !important; } /* Show elements meant for mobile/tablet */
+}
+
+@media (max-width: 800px) {
+    .news-detail {
+        width: calc(100% - 30px); /* Adjust width with less padding */
+        padding: 2rem;
+        border-radius: var(--border-radius-medium);
+    }
+    .news-description h1 {
+        font-size: 2.2rem;
+    }
+    .news-description p {
+        font-size: 1rem;
+        line-height: 1.7;
+    }
+}
+
+@media (max-width: 600px) {
+    .sidebar {
+        width: 100%; /* Full width sidebar on small screens */
+        border-left: none; /* Remove border for full width */
+    }
+    header nav {
+        padding: 0.7rem 1rem; /* Less padding on mobile */
+    }
+    .news-description h1 {
+        font-size: 1.8rem;
+    }
+    .news-description p {
+        font-size: 0.95rem;
+    }
+    .news-detail {
+        padding: 1.5rem;
+    }
+    .close-btn {
+        top: 10px;
+        right: 10px;
+    }
+    .close-btn a {
+        font-size: 1.8rem;
+    }
+}
+
+/* --- Footer --- */
+footer {
+  background-color: var(--background-tertiary);
+  padding: 3.5rem 1.5rem 2.5rem; /* More padding */
+  border-top: 1px solid var(--border-color);
+  margin-top: 5rem; /* More margin */
+}
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+.footer-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1.8rem;
+}
+.footer-logo img {
+  height: 34px; /* Larger footer logo */
+}
+.footer-logo span {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+.social-icons {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem; /* More gap */
+  margin-bottom: 1.8rem;
+}
+.social-icons li a svg {
+  width: 28px; /* Larger social icons */
+  height: 28px;
+  fill: var(--text-secondary);
+  transition: fill var(--transition-speed) var(--transition-easing), transform var(--transition-speed) var(--transition-easing), filter var(--transition-speed) var(--transition-easing);
+}
+.social-icons li a:hover svg {
+  fill: var(--accent-primary);
+  transform: scale(1.2) translateY(-3px);
+  filter: drop-shadow(0 0 5px var(--glow-color-primary));
+}
+.copyright {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.try-it-btn {
+    display: inline-block;
+    padding: 14px 30px;
+    margin-top: 20px;
+    font-weight: 600; /* Slightly bolder */
+    font-size: 1.05em;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    border-radius: 8px; /* More pronounced rounding */
+    cursor: pointer;
+    /* Example Gradient - CHOOSE YOUR BRAND GRADIENT */
+    background-image: linear-gradient(45deg, #3B82F6, #1D4ED8);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3); /* Glow effect based on gradient */
+    transition: all 0.3s ease; /* Transition all properties */
+}
+
+.try-it-btn:hover,
+.try-it-btn:focus {
+    /* Slightly different gradient or transform */
+    background-image: linear-gradient(45deg, #1D4ED8, #3B82F6); /* Reverse or shift gradient */
+    box-shadow: 0 6px 20px rgba(29, 78, 216, 0.4);
+    transform: scale(1.05); /* Slightly enlarge */
+    outline: none;
+}
+
+.try-it-btn:active {
+    transform: scale(0.98); /* Press in effect */
+    box-shadow: 0 2px 10px rgba(29, 78, 216, 0.3);
+}

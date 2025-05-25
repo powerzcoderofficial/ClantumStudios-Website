@@ -1,18 +1,25 @@
 [
     {
-        "banner": "assets/bannercloudos.png",
+        "id": 1,
+        "banner": "assets/PreviewCloudOS.png",
         "title": "CloudOS",
-        "heading": "A Simple Web-based Terminal",
-        "content": "CloudOS is a simple web-based terminal made by clantum studios to provide a terminal like experience to people on the web!",
-        "content2": "This terminal is made to replicate the look of a real terminal. its a combination of cmd and ubuntu's terminal, making it look very nice. go give it a try now!",
+        "content": "CloudOS is a simple web-based terminal made by clantum studios to provide a terminal like experience to people on the web! This terminal is made to replicate the look of a real terminal. its a combination of cmd and ubuntu's terminal, making it look very nice. go give it a try now!",
         "link": "https://cloudos.thats-the.name"
     },
     {
-        "banner": "assets/bannergalaxyos.png",
+        "id": 2,
+        "banner": "assets/PreviewGalaxyOS.png",
         "title": "GalaxyOS",
-        "heading": "A simple and functional WebOS.",
-        "content": "GalaxyOS (formerly QuantumOS) is a functional WebOS powered by the PlutoOS core.",
-        "content2": "This OS is made to replicate a desktop experience on the web that normal users would get as an actual os. Go try it out now!",
+        "content": "GalaxyOS (formerly QuantumOS) is a functional WebOS powered by the PlutoOS core. This OS is made to replicate a desktop experience on the web that normal users would get as an actual os. Go try it out now!",
         "link": "https://galaxyos.thats-the.name"
+    },
+    {
+        "id": 3,
+        "banner": "assets/leonardo.png",
+        "title": "Leonardo: The AI Voice Assistant",
+        "content": "Leonardo is an AI voice assistant that can be connected to a Bluetooth or aux-enabled speaker and be made into a smart one. It is designed to be easy to use and can perform various tasks through voice commands. Stay tuned for more updates on this exciting project!",
+        "link": "" 
+                   
+                   
     }
 ]

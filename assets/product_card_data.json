@@ -1,14 +1,26 @@
 [
-    {
-        "banner": "assets/galaxyos.png",
-        "title": "GalaxyOS",
-        "content": "A webOS powered by the pluto core",
-        "link": "./productdetails.html?id=2"
-    },
-    {
-        "banner": "assets/cloudos.png",
-        "title": "CloudOS",
-        "content": "A functional web terminal with the webcore as its foundation",
-        "link": "./productdetails.html?id=1"
-    }
+  {
+    "id": "1",
+    "title": "cloudos.png",
+    "banner": "assets/cloudos.png",
+    "content": "A functional web terminal with the webcore as its foundation.",
+    "link_to_detail_page": true, 
+    "status": "Live"
+  },
+  {
+    "id": "2",
+    "title": "GalaxyOS",
+    "banner": "assets/galaxyos.png",
+    "content": "A webOS powered by the pluto core.",
+    "link_to_detail_page": true,
+    "status": "Beta"
+  },
+  {
+    "id": "3",
+    "title": "AI Voice Assistant",
+    "banner": "assets/leonardo.png",
+    "content": "An easy to use voice assistant that can be connected to a bluetooth or aux enabled speaker and be made into a smart one.",
+    "link_to_detail_page": true, 
+    "status": "Coming Soon"
+  }
 ]
